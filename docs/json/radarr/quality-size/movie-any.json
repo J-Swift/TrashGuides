@@ -4,49 +4,49 @@
     "qualities": [
         {
             "quality": "HDTV-720p",
-            "min": 11.1,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "WEBDL-720p",
-            "min": 8.1,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "WEBRip-720p",
-            "min": 8.1,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "Bluray-720p",
-            "min": 16.7,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "HDTV-1080p",
-            "min": 21.9,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "WEBDL-1080p",
-            "min": 8.1,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "WEBRip-1080p",
-            "min": 8.1,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },
         {
             "quality": "Bluray-1080p",
-            "min": 33,
+            "min": 1,
             "preferred": 399,
             "max": 400
         },

@@ -1,15 +1,15 @@
 {
-  "trash_id": "defec8fd0c59defec8697ec9defec89b",
-  "name": "UHD",
+  "trash_id": "defec82ddbd2defec826923edefec89e",
+  "name": "TrueHD-raw",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "UHD",
+      "name": "TrueHD",
       "implementation": "ReleaseTitleSpecification",
       "negate": false,
       "required": true,
       "fields": {
-        "value": "\\bUHD\\b"
+        "value": "True[ .-]?HD"
       }
     }
   ]

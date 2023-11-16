@@ -6,12 +6,12 @@
   },
   "includeCustomFormatWhenRenaming": false,
   "specifications": [{
-      "name": "x|h264",
+      "name": "Not x|h265",
       "implementation": "ReleaseTitleSpecification",
-      "negate": false,
+      "negate": true,
       "required": true,
       "fields": {
-          "value": "[xh][ ._-]?264|\\bAVC(\\b|\\d)"
+          "value": "[xh][ ._-]?265|\\bHEVC(\\b|\\d)"
       }
     },
     {

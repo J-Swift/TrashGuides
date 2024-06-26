@@ -1,0 +1,21 @@
+{
+  "trash_id": "defec82699f0defec86e56cbdefec8a0",
+  "trash_score": 10,
+  "trash_scores": {
+    "default": 10
+  },
+  "trash_description": "Prefer Language X",
+  "name": "Language: Prefer Original",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Original Language",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": -2
+      }
+    }
+  ]
+}

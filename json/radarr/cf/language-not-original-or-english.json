@@ -1,0 +1,30 @@
+{
+  "trash_id": "defec82699f0defec86e56cbdefec8a8",
+  "trash_score": -10000,
+  "trash_scores": {
+    "default": -10000
+  },
+  "trash_description": "Language: Prefer X but i'll take Y",
+  "name": "Language: Not Original or English",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Not Original",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": -2
+      }
+    },
+    {
+      "name": "Not English",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
+    }
+  ]
+}

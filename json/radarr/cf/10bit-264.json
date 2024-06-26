@@ -1,0 +1,27 @@
+{
+  "trash_id": "defec8e2f874defec84f6ae4adefec88",
+  "name": "10bit-264",
+  "trash_scores": {
+    "default": -10000
+  },
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [{
+      "name": "Not x|h265",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+          "value": "[xh][ ._-]?265|\\bHEVC(\\b|\\d)"
+      }
+    },
+    {
+      "name": "10bit",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "10[.-]?bit|hi10p"
+      }
+    }
+  ]
+}

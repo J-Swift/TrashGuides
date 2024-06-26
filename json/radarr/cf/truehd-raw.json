@@ -1,0 +1,16 @@
+{
+  "trash_id": "defec82ddbd2defec826923edefec89e",
+  "name": "TrueHD-raw",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "TrueHD",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "True[ .-]?HD"
+      }
+    }
+  ]
+}

@@ -55,21 +55,21 @@
       }
     },
     {
+      "name": "hallowed",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(hallowed)$"
+      }
+    },
+    {
       "name": "HONE",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
         "value": "^(HONE)$"
-      }
-    },
-    {
-      "name": "LEGi0N",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(LEGi0N)$"
       }
     },
     {

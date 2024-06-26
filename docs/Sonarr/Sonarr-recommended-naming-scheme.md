@@ -1,128 +1,130 @@
 # Recommended naming scheme
 
-On the [Sonarr Discord](https://discord.gg/M6BvZn5){:target="_blank" rel="noopener noreferrer"} people often ask, "What's the recommended/best way to
-name your files?" First off, it's personal preference, but it's often recommended to add non-recoverable info.
+--8<-- "includes/starr/renaming-description-faq.md"
 
-Why?
+---
 
-If, for what ever reason, you ever need to do a re-install or re-import in
-the Starr Apps or Plex/Emby/Jellyfin it's nice to have all that info in the filename so
-it gets imported correctly and isn't incorrectly matched as HDTV or WEB-DL etc.
+## Preparation
 
-!!! info "The Tokens not available in the release won't be used/shown."
+Go to `Settings` => `Media Management` and make sure that `Show Advanced` at the top is enabled.
 
-------
+![Enable Advanced](images/sonarr-show-adavanced.png)
 
-## Standard Episode Format
+Once you clicked on the button it should look like this and you should see all the advanced options.
 
-```bash
-{{ sonarr['naming']['sonarr-naming']['episodes']['standard']['default:3'] }}
-```
+![Unhide Advanced](images/unhide-advanced.png)
 
-!!! warning "Sonarr V4 - Is now using Custom Formats instead of Release Profiles. Use the below naming scheme instead :warning:"
+Finally, enable `Rename Episodes` to reveal the episode renaming options.
 
-    ```bash
-    {{ sonarr['naming']['sonarr-naming']['episodes']['standard']['default:4'] }}
-    ```
+![Enable Rename Episodes](images/sonarr-enable-rename.png)
 
-??? abstract "RESULTS: - [Click to show/hide]"
+---
 
-    Single Episode:
+## Episode Format
 
-    `The Series Title! (2010) - S01E01 - Episode Title 1 [AMZN WEBDL-1080p Proper][DV HDR10][DTS 5.1][x264]-RlsGrp`
-
-    Multi Episode:
-
-    `The Series Title! (2010) - S01E01-E03 - Episode Title [AMZN WEBDL-1080p Proper][DV HDR10][DTS 5.1][x264]-RlsGrp`
-
-------
-
-## Daily Episode Format
-
-```bash
-{{ sonarr['naming']['sonarr-naming']['episodes']['daily']['default:3'] }}
-```
-
-!!! warning "Sonarr V4 - Is now using Custom Formats instead of Release Profiles. Use the below naming scheme instead :warning:"
+=== "Standard"
 
     ```bash
-    {{ sonarr['naming']['sonarr-naming']['episodes']['daily']['default:4'] }}
+    {{ sonarr['naming']['sonarr-naming']['episodes']['standard']['default'] }}
     ```
 
-??? abstract "RESULTS: - [Click to show/hide]"
+    <sub><sup>**Single Episode**: `The Series Title! (2010) - S01E01 - Episode Title 1 [AMZN WEBDL-1080p Proper][DV HDR10][DTS 5.1][x264]-RlsGrp`</sup></sub>
 
-    `The Series Title! (2010) - 2013-10-30 - Episode Title 1 [AMZN WEBDL-1080p Proper][DV HDR10][DTS 5.1][x264]-RlsGrp`
+    <sub><sup>**Multi Episode**: `The Series Title! (2010) - S01E01-E03 - Episode Title [AMZN WEBDL-1080p Proper][DV HDR10][DTS 5.1][x264]-RlsGrp`</sup></sub>
 
-------
-
-## Anime Episode Format
-
-```bash
-{{ sonarr['naming']['sonarr-naming']['episodes']['anime']['default:3'] }}
-```
-
-!!! warning "Sonarr V4 - Is now using Custom Formats instead of Release Profiles. Use the below naming scheme instead :warning:"
+=== "Daily"
 
     ```bash
-    {{ sonarr['naming']['sonarr-naming']['episodes']['anime']['default:4'] }}
+    {{ sonarr['naming']['sonarr-naming']['episodes']['daily']['default'] }}
     ```
 
-??? abstract "RESULTS: - [Click to show/hide]"
+    <sub><sup>**Example**: `The Series Title! (2010) - 2013-10-30 - Episode Title 1 [AMZN WEBDL-1080p Proper][DV HDR10][DTS 5.1][x264]-RlsGrp`</sup></sub>
 
-    Single Episode:
+=== "Anime"
 
-    `The Series Title! (2010) - S01E01 - 001 - Episode Title 1 [iNTERNAL HDTV-720p v2][HDR10][10bit][x264][DTS 5.1][JA]-RlsGrp`
+    ```bash
+    {{ sonarr['naming']['sonarr-naming']['episodes']['anime']['default'] }}
+    ```
 
-    Multi Episode:
+    <sub><sup>**Single Episode**: `The Series Title! (2010) - S01E01 - 001 - Episode Title 1 [iNTERNAL HDTV-720p v2][HDR10][10bit][x264][DTS 5.1][JA]-RlsGrp`</sup></sub>
 
-    `The Series Title! (2010) - S01E01-E03 - 001-003 - Episode Title [iNTERNAL HDTV-720p v2][HDR10][10bit][x264][DTS 5.1][JA]-RlsGrp`
+    <sub><sup>**Multi Episode**: `The Series Title! (2010) - S01E01-E03 - 001-003 - Episode Title [iNTERNAL HDTV-720p v2][HDR10][10bit][x264][DTS 5.1][JA]-RlsGrp`</sup></sub>
 
-------
+---
 
-### Series Folder Format
+## Series Folder Format
 
-```bash
-{{ sonarr['naming']['sonarr-naming']['series']['default'] }}
-```
+--8<-- "includes/sonarr/imdb-vs-tvdb.md"
 
-<small>RESULT:</small> `The Series Title! (2010)`
+=== "Standard Folder"
 
-#### Optional Series Folder Format
+    ```bash
+    {{ sonarr['naming']['sonarr-naming']['series']['default'] }}
+    ```
 
-This naming scheme is made to be compatible with the new [Plex TV Series Scanner](https://forums.plex.tv/t/beta-new-plex-tv-series-scanner/696242){:target="_blank" rel="noopener noreferrer"} that now support IMDB and TVDB IDs in file names.
+    <sub><sup>**Example**: `The Series Title! (2010)`</sup></sub>
 
-##### Optional Plex
+=== "Optional Plex"
 
-```bash
-{{ sonarr['naming']['sonarr-naming']['series']['plex'] }}
-```
+    This naming scheme is made to be used with the [New Plex TV Series Scanner](https://forums.plex.tv/t/beta-new-plex-tv-series-scanner/696242){:target="\_blank" rel="noopener noreferrer"}
 
-<small>RESULT:</small> `The Series Title! (2010) {imdb-tt1520211}`
+    === "Plex Folder IMDb"
 
-##### Optional Emby
+        --8<-- "includes/sonarr/tvdb-imdb-info.md"
 
-!!! warning "Emby is the only one who uses `=` for their ID, which isn't supported by the Starr apps at the moment.<br>Keep a eye on the following [PR#1386](https://github.com/TRaSH-Guides/Guides/pull/1386){:target="_blank" rel="noopener noreferrer"} when it does support it"
+        ```bash
+        {{ sonarr['naming']['sonarr-naming']['series']['plex-imdb'] }}
+        ```
 
-```bash
-{{ sonarr['naming']['sonarr-naming']['series']['emby'] }}
-```
+        <sub><sup>**Example**: `The Series Title! (2010) {imdb-tt1520211}`</sup></sub>
 
-<small>RESULT:</small> `The Series Title! (2010)`
+    === "Plex Folder TVDb"
 
-##### Optional Jellyfin
+        ```bash
+        {{ sonarr['naming']['sonarr-naming']['series']['plex-tvdb'] }}
+        ```
 
-```bash
-{{ sonarr['naming']['sonarr-naming']['series']['jellyfin'] }}
-```
+        <sub><sup>**Example**: `The Series Title! (2010) {tvdb-1520211}`</sup></sub>
 
-<small>RESULT:</small> `The Series Title! (2010) [tvdbid-tt1520211]`
+=== "Optional Emby"
 
-!!! tip
-    IMDb IDs are going to be very accurate and rarely change, TVDB/TMDB IDs, on the other hand, do change or are removed more frequently.
+    Source: [Emby Wiki/Docs](https://emby.media/support/articles/TV-Naming.html#id-tags-in-folder--file-names){:target="\_blank" rel="noopener noreferrer"}
 
-------
+    === "Emby Folder IMDb"
 
-### Season Folder Format
+        --8<-- "includes/sonarr/tvdb-imdb-info.md"
+
+        ```bash
+        {{ sonarr['naming']['sonarr-naming']['series']['emby-imdb'] }}
+        ```
+
+        <sub><sup>**Example**: `The Series Title! (2010) [imdb-tt1520211]`</sup></sub>
+
+    === "Emby Folder TVDb"
+
+        ```bash
+        {{ sonarr['naming']['sonarr-naming']['series']['emby-tvdb'] }}
+        ```
+
+        <sub><sup>**Example**: `The Series Title! (2010) [tvdb-1520211]`</sup></sub>
+
+=== "Optional Jellyfin"
+
+    Source: [Jellyfin Wiki/Docs](https://jellyfin.org/docs/general/server/media/shows/){:target="\_blank" rel="noopener noreferrer"}
+
+    !!! warning "Jellyfin doesn't support IMDb ID's for shows"
+
+    === "Jellyfin Folder TVDb"
+
+        ```bash
+        {{ sonarr['naming']['sonarr-naming']['series']['jellyfin-tvdb'] }}
+        ```
+
+        <sub><sup>**Example**: `The Series Title! (2010) [tvdbid-1520211]`</sup></sub>
+
+---
+
+## Season Folder Format
 
 For this there's only one real option to use in my opinion.
 
@@ -130,23 +132,23 @@ For this there's only one real option to use in my opinion.
 Season {season:00}
 ```
 
-RESULT: `Season 01`
+<sub><sup>**Example**: `Season 01`</sup></sub>
 
-------
+---
 
-### Multi-Episode Style
+## Multi-Episode Style
 
 ```bash
 Prefixed Range
 ```
 
-RESULTS:
+<sub><sup>**Example**:</sup></sub>
 
 ![results](images/results.png)
 
-------
+---
 
-## Original Title vs  Original Filename
+## Original Title vs Original Filename
 
 ### Original Title
 
@@ -162,10 +164,6 @@ The filename can be Obscured where the Release naming isn't, especially when you
 
 `{Original Filename}` => `show episode 1-1080p` or `lchd-tkk1080p` or `t1i0p3s7i8yuti`
 
-------
-
-Thanks:
-
-A big Thanks to [fryfrog](https://github.com/fryfrog), [rg9400](https://github.com/rg9400) and [bakerboy448](https://github.com/bakerboy448) for the suggestions.
+---
 
 --8<-- "includes/support.md"
